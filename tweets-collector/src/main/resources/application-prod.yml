@@ -1,0 +1,17 @@
+spring:
+  kafka:
+    bootstrap-servers:
+
+twitter:
+  poll:
+    interval-seconds: 10
+    delay-seconds: 10
+  api:
+    bearer-token: ${TWITTER_BEARER_TOKEN}
+  query:
+    tweets-number: 10
+    filters: "-is:retweet lang:en place_country:US"
+    fields: "created_at,lang,public_metrics,source,geo,text"
+  monitored-topics:
+    AAPL: [ apple, iphone, aapl, macbook ]
+    Inflation: [ inflation, "interest rates" ]
