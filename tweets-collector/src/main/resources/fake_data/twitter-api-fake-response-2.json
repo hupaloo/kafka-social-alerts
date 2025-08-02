@@ -1,0 +1,259 @@
+{
+  "data": [
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:50:00.000Z",
+      "public_metrics": {
+        "retweet_count": 1,
+        "reply_count": 0,
+        "like_count": 10,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 90
+      },
+      "edit_history_tweet_ids": [
+        "1947707000000000001"
+      ],
+      "id": "1947707000000000001",
+      "place": {
+        "id": "01a9a39529b27f36",
+        "url": "https://api.x.com/1.1/geo/id/01a9a39529b27f36.json",
+        "place_type": "city",
+        "name": "Manhattan",
+        "full_name": "Manhattan, NY",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.026675,
+                40.683935
+              ],
+              [
+                -74.026675,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.683935
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Apple's quarterly report will be released tomorrow. Market is watching closely. $AAPL"
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:52:00.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 4,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 78
+      },
+      "edit_history_tweet_ids": [
+        "1947707000000000002"
+      ],
+      "id": "1947707000000000002",
+      "place": {
+        "id": "021a3c4b6d2e1f45",
+        "url": "https://api.x.com/1.1/geo/id/021a3c4b6d2e1f45.json",
+        "place_type": "city",
+        "name": "San Francisco",
+        "full_name": "San Francisco, CA",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -123.173825,
+                37.63983
+              ],
+              [
+                -123.173825,
+                37.929824
+              ],
+              [
+                -122.28178,
+                37.929824
+              ],
+              [
+                -122.28178,
+                37.63983
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "The new iPhone has been announced. Specs are about what was expected, nothing groundbreaking."
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:54:00.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 42
+      },
+      "edit_history_tweet_ids": [
+        "1947707000000000003"
+      ],
+      "id": "1947707000000000003",
+      "place": {
+        "id": "02c8d0e1f2c3a846",
+        "url": "https://api.x.com/1.1/geo/id/02c8d0e1f2c3a846.json",
+        "place_type": "city",
+        "name": "Los Angeles",
+        "full_name": "Los Angeles, CA",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -118.668176,
+                33.703692
+              ],
+              [
+                -118.668176,
+                34.337306
+              ],
+              [
+                -118.155289,
+                34.337306
+              ],
+              [
+                -118.155289,
+                33.703692
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Inflation in the US held steady at 3.2% last month. No major surprises in today's CPI report."
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:56:00.000Z",
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 0,
+        "like_count": 12,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 110
+      },
+      "edit_history_tweet_ids": [
+        "1947707000000000004"
+      ],
+      "id": "1947707000000000004",
+      "place": {
+        "id": "03ad2938c8a2f002",
+        "url": "https://api.x.com/1.1/geo/id/03ad2938c8a2f002.json",
+        "place_type": "city",
+        "name": "Chicago",
+        "full_name": "Chicago, IL",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -87.940101,
+                41.644335
+              ],
+              [
+                -87.940101,
+                42.023131
+              ],
+              [
+                -87.523661,
+                42.023131
+              ],
+              [
+                -87.523661,
+                41.644335
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Just upgraded to a MacBook M3. Super smooth so far, but let’s see how it handles dev workloads in the long run."
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:58:00.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 33
+      },
+      "edit_history_tweet_ids": [
+        "1947707000000000005"
+      ],
+      "id": "1947707000000000005",
+      "place": {
+        "id": "01a9a39529b27f36",
+        "url": "https://api.x.com/1.1/geo/id/01a9a39529b27f36.json",
+        "place_type": "city",
+        "name": "Manhattan",
+        "full_name": "Manhattan, NY",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.026675,
+                40.683935
+              ],
+              [
+                -74.026675,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.683935
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Interest rates have remained unchanged. The Fed seems to be in wait-and-see mode."
+    }
+  ],
+  "meta": {
+    "newest_id": "1947706952345987123",
+    "oldest_id": "1947706901234567890",
+    "result_count": 5
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "data": [
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:30:12.000Z",
+      "public_metrics": {
+        "retweet_count": 2,
+        "reply_count": 1,
+        "like_count": 15,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 120
+      },
+      "edit_history_tweet_ids": [
+        "1947706901234567890"
+      ],
+      "id": "1947706901234567890",
+      "place": {
+        "id": "01a9a39529b27f36",
+        "url": "https://api.x.com/1.1/geo/id/01a9a39529b27f36.json",
+        "place_type": "city",
+        "name": "Manhattan",
+        "full_name": "Manhattan, NY",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.026675,
+                40.683935
+              ],
+              [
+                -74.026675,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.683935
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Apple just crushed earnings again. iPhone sales keep surprising everyone. $AAPL looking strong!"
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:33:14.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 3,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 64
+      },
+      "edit_history_tweet_ids": [
+        "1947706919876543210"
+      ],
+      "id": "1947706919876543210",
+      "place": {
+        "id": "03ad2938c8a2f002",
+        "url": "https://api.x.com/1.1/geo/id/03ad2938c8a2f002.json",
+        "place_type": "city",
+        "name": "Chicago",
+        "full_name": "Chicago, IL",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -87.940101,
+                41.644335
+              ],
+              [
+                -87.940101,
+                42.023131
+              ],
+              [
+                -87.523661,
+                42.023131
+              ],
+              [
+                -87.523661,
+                41.644335
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Inflation is still high. Everyday groceries and rent feel more expensive. When will this end?"
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:35:55.000Z",
+      "public_metrics": {
+        "retweet_count": 1,
+        "reply_count": 2,
+        "like_count": 7,
+        "quote_count": 1,
+        "bookmark_count": 0,
+        "impression_count": 87
+      },
+      "edit_history_tweet_ids": [
+        "1947706932345678910"
+      ],
+      "id": "1947706932345678910",
+      "place": {
+        "id": "021a3c4b6d2e1f45",
+        "url": "https://api.x.com/1.1/geo/id/021a3c4b6d2e1f45.json",
+        "place_type": "city",
+        "name": "San Francisco",
+        "full_name": "San Francisco, CA",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -123.173825,
+                37.63983
+              ],
+              [
+                -123.173825,
+                37.929824
+              ],
+              [
+                -122.28178,
+                37.929824
+              ],
+              [
+                -122.28178,
+                37.63983
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Interest rates are so high now, it's killing small businesses. How are we supposed to grow like this?"
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:39:14.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 44
+      },
+      "edit_history_tweet_ids": [
+        "1947706948765432198"
+      ],
+      "id": "1947706948765432198",
+      "place": {
+        "id": "01a9a39529b27f36",
+        "url": "https://api.x.com/1.1/geo/id/01a9a39529b27f36.json",
+        "place_type": "city",
+        "name": "Manhattan",
+        "full_name": "Manhattan, NY",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -74.026675,
+                40.683935
+              ],
+              [
+                -74.026675,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.877483
+              ],
+              [
+                -73.910408,
+                40.683935
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Got a new MacBook and I'm honestly underwhelmed. Battery life isn't what I expected. Disappointed in Apple this time."
+    },
+    {
+      "lang": "en",
+      "created_at": "2025-07-22T17:41:00.000Z",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 5,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 38
+      },
+      "edit_history_tweet_ids": [
+        "1947706952345987123"
+      ],
+      "id": "1947706952345987123",
+      "place": {
+        "id": "02c8d0e1f2c3a846",
+        "url": "https://api.x.com/1.1/geo/id/02c8d0e1f2c3a846.json",
+        "place_type": "city",
+        "name": "Los Angeles",
+        "full_name": "Los Angeles, CA",
+        "country_code": "US",
+        "country": "United States",
+        "bounding_box": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -118.668176,
+                33.703692
+              ],
+              [
+                -118.668176,
+                34.337306
+              ],
+              [
+                -118.155289,
+                34.337306
+              ],
+              [
+                -118.155289,
+                33.703692
+              ]
+            ]
+          ]
+        },
+        "attributes": {}
+      },
+      "text": "Inflation data came in lower than expected this month. Could be a good sign for cooling interest rates."
+    }
+  ],
+  "meta": {
+    "newest_id": "1947706952345987123",
+    "oldest_id": "1947706901234567890",
+    "result_count": 5
+  }
+}

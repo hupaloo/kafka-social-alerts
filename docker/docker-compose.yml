@@ -1,0 +1,213 @@
+services:
+
+  kafka-cluster-id-generator:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    volumes:
+      - cluster-id:/cluster-id
+      - ./scripts/init-cluster-id.sh:/tmp/init-cluster-id.sh:ro
+    entrypoint: "/tmp/init-cluster-id.sh"
+
+  controller1:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    restart: always
+    container_name: controller1
+    hostname: controller1
+    volumes:
+      - controller1-logs:/var/lib/kafka/controller-logs
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: "controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "CONTROLLER://0.0.0.0:9093"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT"
+      KAFKA_METADATA_LOG_DIR: ${KAFKA_METADATA_LOG_DIR}
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  controller2:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    restart: always
+    container_name: controller2
+    hostname: controller2
+    volumes:
+      - controller2-logs:/var/lib/kafka/controller-logs
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    environment:
+      KAFKA_NODE_ID: 2
+      KAFKA_PROCESS_ROLES: "controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "CONTROLLER://0.0.0.0:9093"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT"
+      KAFKA_METADATA_LOG_DIR: ${KAFKA_METADATA_LOG_DIR}
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  controller3:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    restart: always
+    container_name: controller3
+    hostname: controller3
+    volumes:
+      - controller3-logs:/var/lib/kafka/controller-logs
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    environment:
+      KAFKA_NODE_ID: 3
+      KAFKA_PROCESS_ROLES: "controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "CONTROLLER://0.0.0.0:9093"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT"
+      KAFKA_METADATA_LOG_DIR: ${KAFKA_METADATA_LOG_DIR}
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  broker1:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    container_name: broker1
+    hostname: broker1
+    depends_on:
+      - controller1
+      - controller2
+      - controller3
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_NODE_ID: 4
+      KAFKA_PROCESS_ROLES: "broker"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "BROKER://0.0.0.0:9092"
+      KAFKA_ADVERTISED_LISTENERS: "BROKER://broker1:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "BROKER:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "BROKER"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LOG_DIRS: ${KAFKA_LOG_DIRS}
+    volumes:
+      - broker1-logs:/var/lib/kafka/data
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "kafka-broker-api-versions --bootstrap-server localhost:9092" ]
+      interval: 10s
+      retries: 8
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  broker2:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    container_name: broker2
+    hostname: broker2
+    depends_on:
+      - controller1
+      - controller2
+      - controller3
+    ports:
+      - "9094:9092"
+    environment:
+      KAFKA_NODE_ID: 5
+      KAFKA_PROCESS_ROLES: "broker"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "BROKER://0.0.0.0:9092"
+      KAFKA_ADVERTISED_LISTENERS: "BROKER://broker2:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "BROKER:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "BROKER"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LOG_DIRS: ${KAFKA_LOG_DIRS}
+    volumes:
+      - broker2-logs:/var/lib/kafka/data
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "kafka-broker-api-versions --bootstrap-server localhost:9092" ]
+      interval: 10s
+      retries: 8
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  broker3:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    container_name: broker3
+    hostname: broker3
+    depends_on:
+      - controller1
+      - controller2
+      - controller3
+    ports:
+      - "9096:9092"
+    environment:
+      KAFKA_NODE_ID: 6
+      KAFKA_PROCESS_ROLES: "broker"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@controller1:9093,2@controller2:9093,3@controller3:9093"
+      KAFKA_LISTENERS: "BROKER://0.0.0.0:9092"
+      KAFKA_ADVERTISED_LISTENERS: "BROKER://broker3:9092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "BROKER:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "BROKER"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_LOG_DIRS: ${KAFKA_LOG_DIRS}
+    volumes:
+      - broker3-logs:/var/lib/kafka/data
+      - cluster-id:/cluster-id
+      - ./scripts/run-kafka-with-cluster-id.sh:/tmp/run-kafka-with-cluster-id.sh
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "kafka-broker-api-versions --bootstrap-server localhost:9092" ]
+      interval: 10s
+      retries: 8
+    entrypoint: "/tmp/run-kafka-with-cluster-id.sh"
+
+  akhq:
+    image: tchiotludo/akhq:0.26.0
+    container_name: akhq
+    hostname: akhq
+    ports:
+      - "${AKHQ_PORT}:8080"
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "broker1:9092,broker2:9092,broker3:9092"
+
+  init-topics:
+    image: confluentinc/cp-kafka:7.4.10
+    user: root
+    depends_on:
+      broker1:
+        condition: service_healthy
+      broker2:
+        condition: service_healthy
+      broker3:
+        condition: service_healthy
+    volumes:
+      - ./scripts/init-topics.sh:/scripts/init-topics.sh:ro
+    entrypoint: "/scripts/init-topics.sh"
+
+  tweets-collector:
+    build:
+      context: ../tweets-collector
+      dockerfile: docker/Dockerfile
+    depends_on:
+      init-topics:
+        condition: service_completed_successfully
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      ENABLE_DEBUG: "true"
+      DEBUG_PORT: "5005"
+    ports:
+      - "58000:5005"  # expose JVM debug port
+
+volumes:
+  cluster-id:
+  controller1-logs:
+  controller2-logs:
+  controller3-logs:
+  broker1-logs:
+  broker2-logs:
+  broker3-logs:
